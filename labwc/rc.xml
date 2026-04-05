@@ -1,0 +1,209 @@
+<labwc_config>
+  <keyboard>
+    <numlock>on</numlock>
+    <!-- my macros -->
+    <keybind key="C-S-p" onRelease="yes">
+      <action name="Execute" command="bash ~/scripts/clicker.sh" />
+    </keybind>
+    <!-- app launchers  -->
+    <keybind key="Super_L" onRelease="yes">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/toggler.sh fuzzel" />
+    </keybind>
+    <keybind key="W-v">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/clipboard.sh" />
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/terminal.sh" />
+    </keybind>
+    <keybind key="W-1">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/terminal.sh" />
+    </keybind>
+    <keybind key="W-b">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/browser.sh" />
+    </keybind>
+    <keybind key="W-2">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/browser.sh" />
+    </keybind>
+    <keybind key="W-f">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/files.sh" />
+    </keybind>
+    <keybind key="W-3">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/other-apps.sh 1p" />
+    </keybind>
+    <keybind key="W-4">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/other-apps.sh 2p" />
+    </keybind>
+    <keybind key="W-5">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/other-apps.sh 3p" />
+    </keybind>
+    <keybind key="W-6">
+      <action name="Execute" command="bash ~/.config/labwc/launch-scripts/other-apps.sh 4p" />
+    </keybind>
+    <!-- whatever -->
+    <keybind key="C-W-a">
+      <action name="SnapToEdge" direction="left" combine="yes" />
+    </keybind>
+    <keybind key="C-W-d">
+      <action name="SnapToEdge" direction="right" combine="yes" />
+    </keybind>
+    <keybind key="W-l">
+      <action name="Execute" command="swaylock -f -c 000000" />
+    </keybind>
+    <keybind key="W-q">
+      <action name="Close" />
+    </keybind>
+    <keybind key="W-d">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="A-Escape">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="W-m">
+      <action name="Iconify" />
+    </keybind>
+    <keybind key="W-a">
+      <action name="PreviousWindow" />
+    </keybind>
+    <keybind key="W-e">
+      <action name="ToggleMaximize" />
+    </keybind>
+    <keybind key="C-W-e">
+      <action name="ToggleFullscreen" />
+    </keybind>
+    <keybind key="C-S-l">
+      <action name="Execute" command="busctl --user -- set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6000" />
+    </keybind>
+    <keybind key="C-S-.">
+      <action name="Execute" command="busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -300" />
+    </keybind>
+    <keybind key="C-S-,">
+      <action name="Execute" command="busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +300" />
+    </keybind>
+    <keybind key="XF86_AudioLowerVolume">
+      <action name="Execute" command="amixer sset Master 5%-" />
+    </keybind>
+    <keybind key="XF86_AudioRaiseVolume">
+      <action name="Execute" command="amixer sset Master 5%+" />
+    </keybind>
+    <keybind key="XF86_AudioMute">
+      <action name="Execute" command="amixer sset Master toggle" />
+    </keybind>
+    <keybind key="XF86_MonBrightnessUp">
+      <action name="Execute" command="brightnessctl set +2%" />
+    </keybind>
+    <keybind key="XF86_MonBrightnessDown">
+      <action name="Execute" command="brightnessctl set 2%-" />
+    </keybind>
+    <keybind key="S-W-s">
+      <action name="Execute">
+        <command>sh -c 'grim -g "$(slurp)" - | wl-copy'</command>
+      </action>
+    </keybind>
+    <keybind key="S-W-f">
+      <action name="Execute">
+        <command>sh -c 'grim -g "$(slurp)" - | tesseract stdin stdout -l eng | wl-copy'</command>
+      </action>
+    </keybind>
+    <keybind key="C-W-f">
+      <action name="Execute">
+        <command>sh -c 'grim -g "$(slurp)" - | tesseract stdin stdout -l rus | wl-copy'</command>
+      </action>
+    </keybind>
+  </keyboard>
+  <libinput>
+    <!-- <device category="default"> -->
+    <device category="ASUF1203:00 2808:0217 Touchpad">
+      <naturalScroll>yes</naturalScroll>
+    </device>
+  </libinput>
+  <windowRules>
+    <!-- Action -->
+    <windowRule identifier="com.system76.CosmicFiles">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <!-- browser -->
+    <windowRule identifier="zen" title="*Zen Browser">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="app.zen_browser.zen">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="librewolf">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+
+	<!-- Media -->
+    <windowRule identifier="mpv">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="org.kde.haruna">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+
+    <!-- Misc -->
+    <windowRule identifier="org.pulseaudio.pavucontrol">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="org.keepassxc.KeePassXC">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="KeePassXC">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="steamwebhelper: Steam">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="code">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="Throne: [Admin] Throne">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="krita">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="obsidian">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="discord">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="org.qbittorrent.qBittorrent">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="io.github.kolunmi.Bazaar">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="Throne">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <!-- Thunar behaves unpredictebly, sometimes it uses "thunar" and sometimes in uses "Thunar" sa an identifier -->
+    <windowRule identifier="thunar" title="* - Thunar">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="modrinth-app-wrapped">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="io.github.flattool.Warehouse">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="curseforge">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="foot">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+    <windowRule identifier="pcmanfm">
+      <action name="Maximize" direction="both" />
+    </windowRule>
+  </windowRules>
+  <theme>
+    <name>caelus</name>
+    <icon>Numix-Circle</icon>
+    <cornerRadius>0</cornerRadius>
+    <maximizedDecoration>none</maximizedDecoration>
+  </theme>
+  <core>
+    <decoration>client</decoration>
+  </core>
+</labwc_config>
